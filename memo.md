@@ -51,3 +51,32 @@ python3 manage.py makemigrations blog
 ```shell
 python3 manage.py migrate blog
 ```
+
+##### heroku デプロイ
+コンテナをイメージにする
+```shell
+docker commit コンテナ名 イメージ名(ここで作成する)
+```
+デプロイ用のDockerfileを作成する  
+...  
+
+ログイン
+```shell
+heroku login
+```
+container ログイン
+```shell
+heroku container:login
+```
+herokuのアプリ作成(ドメイン名になる)
+```
+heroku create django01
+```
+herokuにpush(Dcokerfileをもとにされる)
+```
+heroku container:push web --app django01
+```
+herokuにrelease
+```
+heroku container:release web --app django01
+```
