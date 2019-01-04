@@ -69,14 +69,14 @@ container ログイン
 heroku container:login
 ```
 herokuのアプリ作成(ドメイン名になる)
-```
+```shell
 heroku create django01
 ```
 herokuにpush(Dcokerfileをもとにされる)
-```
+```shell
 heroku container:push web --app django01
 ```
 herokuにrelease
-```
+```shell
 heroku container:release web --app django01
 ```
